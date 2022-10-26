@@ -72,8 +72,8 @@ Build i.MX with docker
 ├── README.md
 ├── docker-build.sh
 ├── docker-run.sh
-├── env.sh -> imx-5.10.35-2.0.0/env.sh
-└── imx-5.10.35-2.0.0
+├── env.sh -> imx-5.15.52-2.1.0/env.sh
+└── imx-5.15.52-2.1.0
     ├── env.sh
     └── yocto-build.sh
 ```
@@ -100,7 +100,7 @@ Build the yocto imx-image in a docker container
 ```{.sh}
   $ ./docker-run.sh ${IMX_RELEASE}/yocto-build.sh
 
-  i.e IMX_RELEASE=imx-5.10.35-2.0.0
+  i.e IMX_RELEASE=imx-5.15.52-2.1.0
 ```
 
 or just go to the docker container prompt (and run the build script from there):

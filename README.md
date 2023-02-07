@@ -72,8 +72,8 @@ Build i.MX with docker
 ├── README.md
 ├── docker-build.sh
 ├── docker-run.sh
-├── env.sh -> imx-5.15.52-2.1.0/env.sh
-└── imx-5.15.52-2.1.0
+├── env.sh -> imx-5.15.71-2.2.0/env.sh
+└── imx-5.15.71-2.2.0
     ├── env.sh
     └── yocto-build.sh
 ```

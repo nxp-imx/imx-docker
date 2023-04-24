@@ -17,6 +17,6 @@ MACHINE="imx8mpevk"
 DISTRO="fsl-imx-xwayland"
 IMAGES="imx-image-core"
 
-REMOTE="https://source.codeaurora.org/external/imx/imx-manifest"
+REMOTE="https://github.com/nxp-imx/imx-manifest"
 BRANCH="imx-linux-hardknott"
 MANIFEST=${IMX_RELEASE}".xml"

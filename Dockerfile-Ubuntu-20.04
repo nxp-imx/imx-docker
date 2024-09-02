@@ -43,3 +43,7 @@ USER $USER
 
 ARG DOCKER_WORKDIR
 WORKDIR ${DOCKER_WORKDIR}
+
+RUN git config --global user.email "info@dalos.tech"
+RUN git config --global user.name "Dalos CI"
+RUN git config --global color.ui true

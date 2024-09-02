@@ -24,10 +24,12 @@
 # source the common variables
 . ./env.sh
 
+# avoid docker creating this dir as root
+mkdir -p "$DOCKER_WORKDIR"
+
 # run the docker image
 docker run -it --rm \
-    --volume ${HOME}:${HOME} \
-    --volume ${DOCKER_WORKDIR}:${DOCKER_WORKDIR} \
-    --volume $(pwd)/${IMX_RELEASE}${IMX_RELEASE_VARIANT}:${DOCKER_WORKDIR}/${IMX_RELEASE} \
+    --volume ${DOCKER_WORKDIR}:/opt/yocto/ \
+    --volume $(pwd)/${IMX_RELEASE}${IMX_RELEASE_VARIANT}:/opt/yocto/${IMX_RELEASE} \
     "${DOCKER_IMAGE_TAG}" \
     $1

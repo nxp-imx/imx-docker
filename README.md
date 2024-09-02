@@ -1,11 +1,21 @@
 Purpose
 =============
-This is a fork of imx-docker from NXP adding support for TN yocto builds
+This is a fork of imx-docker from NXP adding support for TN yocto builds.
 
 Usage
 =============
-Follow normal setup intructions up to and including building the Ubuntu 22 docker image. Then execute:
+Follow normal setup intructions up to and including building the Ubuntu 20 docker image. Note that you may have to re-login to the machine after adding your user to the docker group for new permissions to apply.
+
+Additionally:
+```{.sh}
+sudo mkdir /opt/yocto
+sudo chown ubuntu /opt/yocto
+```
+
+Then execute:
+```{.sh}
 ./docker-run.sh imx-5.15.71-2.2.0/yocto-build.sh
+```
 
 Notes
 --------------

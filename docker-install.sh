@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+
 curl -fsSL https://get.docker.com | sudo sh
 sudo usermod -aG docker $(whoami)
 sudo systemctl daemon-reload

@@ -17,10 +17,10 @@ jobs:
           submodules: recursive
       - name: Setup
         run: |
-          cd imx-docker
           ./install_docker.sh
       - name: Build
         run: |
-          cd imx-docker
-          ls
+          ./docker-build.sh Dockerfile-Ubuntu-20.04
+          /docker-run.sh imx-5.15.71-2.2.0/yocto-build.sh
+          
           

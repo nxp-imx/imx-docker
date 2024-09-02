@@ -4,7 +4,7 @@
 # Docker
 
 DOCKER_IMAGE_TAG="imx-yocto"
-DOCKER_WORKDIR="$(pwd)/../yocto"
+DOCKER_WORKDIR="$(pwd)/yocto"
 
 # Yocto
 

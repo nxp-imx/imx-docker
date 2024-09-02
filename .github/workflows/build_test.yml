@@ -1,0 +1,26 @@
+name: build_test
+
+# Work in progress. takes forever
+
+on:
+  push:
+
+
+jobs:
+         
+  compilation-test:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout repository and submodules
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: Setup
+        run: |
+          ./docker-install.sh
+      - name: Build
+        run: |
+          ./docker-build.sh Dockerfile-Ubuntu-20.04
+          ./docker-run.sh imx-5.15.71-2.2.0/yocto-build.sh
+          
+          

@@ -27,8 +27,14 @@
 # avoid docker creating this dir as root
 mkdir -p "$DOCKER_WORKDIR"
 
+if [ -z ${CI} ]; then 
+    INTERACTIVE="-it"
+else 
+    INTERACTIVE=""
+fi
+
 # run the docker image
-docker run -it --rm \
+docker run $INTERACTIVE --rm \
     --volume ${DOCKER_WORKDIR}:/opt/yocto/ \
     --volume $(pwd)/${IMX_RELEASE}${IMX_RELEASE_VARIANT}:/opt/yocto/${IMX_RELEASE} \
     "${DOCKER_IMAGE_TAG}" \

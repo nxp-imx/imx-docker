@@ -14,7 +14,7 @@ IMX_RELEASE_VARIANT="-tn"
 
 YOCTO_DIR="${DOCKER_WORKDIR}/${IMX_RELEASE}-build"
 
-MACHINE="edm-g-imx8mm"
+MACHINE="edm-g-imx8mp"
 DISTRO="imx-desktop-xwayland"
 IMAGES="imx-image-desktop"
 

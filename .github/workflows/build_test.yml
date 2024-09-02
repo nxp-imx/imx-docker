@@ -1,0 +1,26 @@
+name: build_test
+
+# Work in progress. takes forever
+
+on:
+  push:
+
+
+jobs:
+         
+  compilation-test:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout repository and submodules
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: Setup
+        run: |
+          cd imx-docker
+          ./install_docker.sh
+      - name: Build
+        run: |
+          cd imx-docker
+          ls
+          

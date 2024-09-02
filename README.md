@@ -1,3 +1,18 @@
+Purpose
+=============
+This is a fork of imx-docker from NXP adding support for TN yocto builds
+
+Usage
+=============
+Follow normal setup intructions up to and including building the Ubuntu 22 docker image. Then execute:
+./docker-run.sh imx-5.15.71-2.2.0/yocto-build.sh
+
+Notes
+--------------
+We execute on imx-5.15.71-2.2.0/yocto-build.sh rather than imx-5.15.71-2.2.0-tn/yocto-build.sh however the latter is actually being used. This happens because we mount imx-5.15.71-2.2.0-tn as imx-5.15.71-2.2.0 inside docker to keep the script modifications to a minimum while allowing our and NXPs 5.15 configs of the same version to co-exist in the repo. See env.sh and docker-run.sh changes as appropriate.
+
+Original README
+=============
 
 This setup helps to build i.MX BSP in an isolated environment with docker.
 

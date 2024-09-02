@@ -28,6 +28,6 @@
 docker run -it --rm \
     --volume ${HOME}:${HOME} \
     --volume ${DOCKER_WORKDIR}:${DOCKER_WORKDIR} \
-    --volume $(pwd)/${IMX_RELEASE}:${DOCKER_WORKDIR}/${IMX_RELEASE} \
+    --volume $(pwd)/${IMX_RELEASE}${IMX_RELEASE_VARIANT}:${DOCKER_WORKDIR}/${IMX_RELEASE} \
     "${DOCKER_IMAGE_TAG}" \
     $1

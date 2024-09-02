@@ -1,11 +1,10 @@
 #!/bin/bash
-# Here are some default settings.
-# Make sure DOCKER_WORKDIR is created and owned by current user.
+# TN settings
 
 # Docker
 
 DOCKER_IMAGE_TAG="imx-yocto"
-DOCKER_WORKDIR="/opt/yocto"
+DOCKER_WORKDIR="$(pwd)/../yocto"
 
 # Yocto
 

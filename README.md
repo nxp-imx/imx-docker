@@ -6,13 +6,18 @@ Usage
 =============
 Follow normal setup intructions up to and including building the Ubuntu 20 docker image. Note that you may have to re-login to the machine after adding your user to the docker group for new permissions to apply.
 
-Additionally:
+To Install Docker on a fresh machine:
 ```{.sh}
-sudo mkdir /opt/yocto
-sudo chown ubuntu /opt/yocto
+./docker-install.sh
+```
+Log out and back in after this step so your user permissions are refreshed.
+
+Build the image (once per machine - and again if you modify the dockerfile):
+```{.sh}
+./docker-build.sh Dockerfile-Ubuntu-20.04
 ```
 
-Then execute:
+Then run the build:
 ```{.sh}
 ./docker-run.sh imx-5.15.71-2.2.0/yocto-build.sh
 ```

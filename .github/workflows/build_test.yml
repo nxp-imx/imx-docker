@@ -7,7 +7,7 @@ on:
 
 jobs:         
   compilation-test:
-    runs-on: ubuntu-22.04
+    runs-on: 32-core-linux-runner
     steps:
       - name: Checkout repository and submodules
         uses: actions/checkout@v4

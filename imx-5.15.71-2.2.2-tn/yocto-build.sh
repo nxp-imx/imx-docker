@@ -20,7 +20,7 @@ repo sync -j`nproc`
 
 # source the yocto env
 
-EULA=1 MACHINE="${MACHINE}" DISTRO="${DISTRO}" source tn-setup-release.sh -b build-${DISTRO}
+WIFI_FIRMWARE=y BASEBOARD=wizard EULA=1 MACHINE="${MACHINE}" DISTRO="${DISTRO}" source tn-setup-release.sh -b build-${DISTRO}
 
 # Build
 

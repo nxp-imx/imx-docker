@@ -17,6 +17,7 @@ MACHINE="edm-g-imx8mp"
 DISTRO="imx-desktop-xwayland"
 IMAGES="imx-image-desktop"
 
-REMOTE="https://github.com/TechNexion/tn-imx-yocto-manifest"
+#REMOTE="https://github.com/TechNexion/tn-imx-yocto-manifest"
+REMOTE="https://github.com/Dalos-Technologies/tn-imx-yocto-manifest"
 BRANCH="kirkstone_5.15.y-stable"
 MANIFEST=${IMX_RELEASE}".xml"

@@ -19,12 +19,12 @@ Build the image (once per machine - and again if you modify the dockerfile):
 
 Then run the build:
 ```{.sh}
-./docker-run.sh imx-5.15.71-2.2.0/yocto-build.sh
+./docker-run.sh imx-5.15.71-2.2.2/yocto-build.sh
 ```
 
 Notes
 --------------
-We execute on imx-5.15.71-2.2.0/yocto-build.sh rather than imx-5.15.71-2.2.0-tn/yocto-build.sh however the latter is actually being used. This happens because we mount imx-5.15.71-2.2.0-tn as imx-5.15.71-2.2.0 inside docker to keep the script modifications to a minimum while allowing our and NXPs 5.15 configs of the same version to co-exist in the repo. See env.sh and docker-run.sh changes as appropriate.
+We execute on imx-5.15.71-2.2.2/yocto-build.sh rather than imx-5.15.71-2.2.2-tn/yocto-build.sh however the latter is actually being used. This happens because we mount imx-5.15.71-2.2.2-tn as imx-5.15.71-2.2.2 inside docker to keep the script modifications to a minimum while allowing our and NXPs 5.15 configs of the same version to co-exist in the repo. See env.sh and docker-run.sh changes as appropriate.
 
 Original README
 =============

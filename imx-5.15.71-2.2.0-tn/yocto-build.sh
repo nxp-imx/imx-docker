@@ -2,7 +2,7 @@
 # This script will run into container
 
 # source the common variables
-. imx-5.15.71-2.2.0/env.sh
+. imx-5.15.71-2.2.2/env.sh
 
 #
 

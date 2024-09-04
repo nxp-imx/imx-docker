@@ -16,6 +16,6 @@ jobs:
       - name: Build
         run: |
           ./docker-build.sh Dockerfile-Ubuntu-20.04
-          ./docker-run.sh imx-5.15.71-2.2.0/yocto-build.sh
+          ./docker-run.sh imx-5.15.71-2.2.2/yocto-build.sh
           
           

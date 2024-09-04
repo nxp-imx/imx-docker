@@ -9,7 +9,7 @@ DOCKER_WORKDIR="/opt/yocto"
 
 # Yocto
 
-IMX_RELEASE="imx-5.15.71-2.2.0"
+IMX_RELEASE="imx-5.15.71-2.2.2"
 
 YOCTO_DIR="${DOCKER_WORKDIR}/${IMX_RELEASE}-build"
 

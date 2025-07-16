@@ -99,14 +99,6 @@ Build the yocto imx-image in a docker container
 -----------------------------------------------
 
 ```{.sh}
-  $ ./docker-run.sh ${IMX_RELEASE}/yocto-build.sh
-
-  i.e IMX_RELEASE=imx-6.12.20-2.0.0
-```
-
-or just go to the docker container prompt (and run the build script from there):
-
-```{.sh}
   $ ./docker-run.sh
 ```
 

@@ -23,6 +23,7 @@ if [ $# -ne 1 ]
                      --build-arg "USER=$(whoami)" \
                      --build-arg "host_uid=$(id -u)" \
                      --build-arg "host_gid=$(id -g)" \
+					 --network host \
                      -f $1 \
                      .
 fi

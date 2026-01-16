@@ -70,11 +70,12 @@ Build i.MX with docker
 ├── Dockerfile-Ubuntu-18.04
 ├── Dockerfile-Ubuntu-20.04
 ├── Dockerfile-Ubuntu-22.04
+├── Dockerfile-Ubuntu-24.04
 ├── README.md
 ├── docker-build.sh
 ├── docker-run.sh
-├── env.sh -> imx-6.12.49-2.2.0/env.sh
-└── imx-6.12.49-2.2.0
+├── env.sh -> imx-6.18.2-1.0.0/env.sh
+└── imx-6.18.2-1.0.0
     ├── env.sh
     └── yocto-build.sh
 ```
@@ -89,10 +90,10 @@ Create a yocto-ready docker image
 ---------------------------------
 
 Run `docker-build.sh` with one argument, related to Dockerfile, corresponding 
-to the operating system, for example the Dockerfile for Ubuntu version 22.04:
+to the operating system, for example the Dockerfile for Ubuntu version 24.04:
 
 ```{.sh}
-  $ ./docker-build.sh Dockerfile-Ubuntu-22.04
+  $ ./docker-build.sh Dockerfile-Ubuntu-24.04
 ```
 
 Build the yocto imx-image in a docker container

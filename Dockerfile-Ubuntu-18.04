@@ -34,8 +34,11 @@ RUN echo "${USER} ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/${USER} && \
 # outside the container, on host directories, as docker volumes.
 ARG host_uid \
     host_gid
-RUN groupadd -g $host_gid nxp && \
-    useradd -g $host_gid -m -s /bin/bash -u $host_uid $USER
+
+COPY create-container-user.sh /
+RUN chmod +x /create-container-user.sh && \
+	/create-container-user.sh ${host_uid} ${host_gid} ${USER} && \
+	rm /create-container-user.sh
 
 # Yocto builds should run as a normal user.
 USER $USER

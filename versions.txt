@@ -18,3 +18,4 @@
 6.12.34-2.1.0 24.04 imx-linux-nanbield imx-6.12.34-2.1.0.xml
 6.12.49-2.2.0 24.04 imx-linux-nanbield imx-6.12.49-2.2.0.xml
 6.18.2-1.0.0 24.04 imx-linux-whinlatter imx-6.18.2-1.0.0.xml
+6.18.20-2.0.0 24.04 imx-linux-wrynose imx-6.18.20-2.0.0.xml

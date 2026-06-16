@@ -94,6 +94,7 @@ This file contains the mapping of i.MX versions to their build configurations:
 
 ```
 # VERSION           UBUNTU  BRANCH                  MANIFEST
+6.18.20-2.0.0       24.04   imx-linux-wrynose       imx-6.18.20-2.0.0.xml
 6.18.2-1.0.0        24.04   imx-linux-whinlatter    imx-6.18.2-1.0.0.xml
 6.6.23-2.0.0        22.04   imx-linux-scarthgap     imx-6.6.23-2.0.0.xml
 ```
@@ -124,13 +125,13 @@ export IMAGES="${IMAGES:-imx-image-core}"
 Build the Docker image for your desired i.MX version:
 
 ```bash
-./docker-build.sh 6.18.2-1.0.0
+./docker-build.sh 6.18.20-2.0.0
 ```
 
 To rebuild without cache:
 
 ```bash
-./docker-build.sh 6.18.2-1.0.0 --no-cache
+./docker-build.sh 6.18.20-2.0.0 --no-cache
 ```
 
 This will:
@@ -147,13 +148,13 @@ This will:
 Start an interactive shell in the container:
 
 ```bash
-./docker-run.sh 6.18.2-1.0.0
+./docker-run.sh 6.18.20-2.0.0
 ```
 
 Then manually run the build script:
 
 ```bash
-yocto-build.sh
+. /usr/local/bin/yocto-build.sh
 ```
 
 #### Direct Build
@@ -161,7 +162,7 @@ yocto-build.sh
 Run the build directly without entering the container:
 
 ```bash
-./docker-run.sh 6.18.2-1.0.0 yocto-build.sh
+./docker-run.sh 6.18.20-2.0.0 yocto-build.sh
 ```
 
 ### Step 3: Customize Build Parameters
@@ -169,7 +170,7 @@ Run the build directly without entering the container:
 You can override default build parameters using environment variables:
 
 ```bash
-MACHINE=imx8mmevk DISTRO=fsl-imx-xwayland IMAGES=imx-image-full ./docker-run.sh 6.18.2-1.0.0 yocto-build.sh
+MACHINE=imx8mmevk DISTRO=fsl-imx-xwayland IMAGES=imx-image-full ./docker-run.sh 6.18.20-2.0.0 yocto-build.sh
 ```
 
 ## Volume Mounts
@@ -219,7 +220,7 @@ ${DOCKER_WORKDIR}/imx-<VERSION>/build_<DISTRO>/tmp/deploy/images/<MACHINE>/
 
 For example:
 ```
-~/yocto-builds/imx-6.18.2-1.0.0/build_fsl-imx-wayland/tmp/deploy/images/imx8mpevk/
+~/yocto-builds/imx-6.18.20-2.0.0/build_fsl-imx-wayland/tmp/deploy/images/imx8mpevk/
 ```
 
 ### Cleaning Up
@@ -227,11 +228,11 @@ For example:
 To remove a Docker image:
 
 ```bash
-docker rmi imx-docker:imx-6.18.2-1.0.0
+docker rmi imx-docker:imx-6.18.0-2.0.0
 ```
 
 To clean up build artifacts:
 
 ```bash
-rm -rf ~/yocto-builds/imx-6.18.2-1.0.0
+rm -rf ~/yocto-builds/imx-6.18.20-2.0.0
 ```

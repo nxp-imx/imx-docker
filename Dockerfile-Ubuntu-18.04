@@ -37,8 +37,12 @@ ARG host_uid \
 RUN groupadd -g $host_gid nxp && \
     useradd -g $host_gid -m -s /bin/bash -u $host_uid $USER
 
-# Yocto builds should run as a normal user.
-USER $USER
-
 ARG DOCKER_WORKDIR
 WORKDIR ${DOCKER_WORKDIR}
+
+# Copy yocto-build.sh into container
+COPY yocto-build.sh /usr/local/bin/yocto-build.sh
+RUN chmod +x /usr/local/bin/yocto-build.sh
+
+# Yocto builds should run as a normal user.
+USER $USER

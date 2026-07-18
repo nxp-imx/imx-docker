@@ -28,8 +28,8 @@ RUN chmod 755 /usr/local/bin/repo
 
 # Add your user to sudoers to be able to install other packages in the container.
 ARG USER
-RUN echo "${USER} ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/${USER} && \
-    chmod 0440 /etc/sudoers.d/${USER}
+RUN echo "${USER} ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/yocto_user && \
+    chmod 0440 /etc/sudoers.d/yocto_user
 
 # Set the arguments for host_id and user_id to be able to save the build artifacts
 # outside the container, on host directories, as docker volumes.

@@ -5,12 +5,13 @@ FROM ubuntu:24.04
 # for a default confirmation [Y/n] at some configurations.
 
 ENV DEBIAN_FRONTEND=noninteractive
-RUN apt update
-RUN apt install -y gawk wget git-core diffstat unzip texinfo \
-    gcc-multilib build-essential chrpath socat file cpio python3 \
-    python3-pip python3-pexpect xz-utils debianutils iputils-ping \
-    libsdl1.2-dev xterm tar locales net-tools rsync sudo vim curl zstd \
-    liblz4-tool libssl-dev bc lzop libgnutls28-dev efitools git-lfs
+RUN apt update && \
+    apt install -y gawk wget git-core diffstat unzip texinfo \
+        gcc-multilib build-essential chrpath socat file cpio python3 \
+        python3-pip python3-pexpect xz-utils debianutils iputils-ping \
+        libsdl1.2-dev xterm tar locales net-tools rsync sudo vim curl zstd \
+        liblz4-tool libssl-dev bc lzop libgnutls28-dev efitools git-lfs && \
+    rm -rf /var/lib/apt/lists/*
 
 # Set up locales
 RUN locale-gen en_US.UTF-8 && \
@@ -22,9 +23,8 @@ ENV LC_ALL en_US.UTF-8
 # the 'sh' alias to 'bash' instead of 'dash'.
 RUN rm /bin/sh && ln -s bash /bin/sh
 
-# Install repo
-ADD https://storage.googleapis.com/git-repo-downloads/repo /usr/local/bin/
-RUN chmod 755 /usr/local/bin/repo
+# Install repo (set mode in one step to avoid an extra copy-up layer)
+ADD --chmod=755 https://storage.googleapis.com/git-repo-downloads/repo /usr/local/bin/repo
 
 # Add your user to sudoers to be able to install other packages in the container.
 ARG USER
@@ -41,9 +41,8 @@ RUN groupadd -g $host_gid nxp && \
 ARG DOCKER_WORKDIR
 WORKDIR ${DOCKER_WORKDIR}
 
-# Copy yocto-build.sh into container
-COPY yocto-build.sh /usr/local/bin/yocto-build.sh
-RUN chmod +x /usr/local/bin/yocto-build.sh
+# Copy yocto-build.sh into container (set exec bit in the same layer)
+COPY --chmod=755 yocto-build.sh /usr/local/bin/yocto-build.sh
 
 # Yocto builds should run as a normal user.
 USER $USER
